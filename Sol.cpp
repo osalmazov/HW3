@@ -163,36 +163,3 @@ int main(){
     free(resultMatrix);
     return 0;
 }
-/*ПРИМЕР РЕШЕНИЯ С OMP;
-#include<omp.h>
-
-int main(){
- int N;
- int N_thread;
- std::cin >> N;
- std::cin >> N_thread;
-
- int A[N][N];
- int B[N][N];
- int res[N][N];
-
- for(int i = 0; i < N; i++){
-     for(int j = 0; j < N; j++){
-         A[i][j] = rand() % 100 + 1;
-         B[i][j] = rand() % 100 + 1;
-         res[i][j] = 0;
-     }
- }
- double wtime = omp_get_wtime();
- omp_set_num_threads(N_thread);
-#pragma omp parallel for
- for(int i = 0 ; i < N; i++){
-     for(int j = 0; j < N; j++){
-         for(int k = 0; k < N; k++){
-             res[i][j] += A[i][k] * B[k][j];
-         }
-     }
- }
- wtime = omp_get_wtime() - wtime;
- std::cout << "Time: " << wtime << std::endl;
-}*/
